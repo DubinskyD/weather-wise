@@ -87,9 +87,7 @@ export default {
     width: 30px;
     height: 30px;
     border-radius: 20px;
-
     border: 1px solid rgb(107, 103, 103);
-
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
 

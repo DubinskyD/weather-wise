@@ -1,0 +1,20 @@
+export default {
+  mainTab: "Main",
+  favoritesTab: "Favorites",
+  inputLabel: "Enter city name",
+  current: "Current",
+  forecast: "Forecast",
+  next24: "Next 24h",
+  next5d: "Next 5d",
+  feelsLike: "Feels like",
+  humidity: "Humidity",
+  pressure: "Pressure",
+  temperature: "Temperature",
+  period: "Period",
+
+  deleteBlockMessage: "Are you sure you want to delete the block?",
+  addMaxFavorite: "to add remove city ... because a maximum of 5",
+  confirm: "Confirm",
+  cancel: "Cancel",
+  ok: "Ok",
+};

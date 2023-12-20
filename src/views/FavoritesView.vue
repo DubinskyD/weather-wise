@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <p v-if="!favoriteList.length">нет сохраненных городов</p>
+    <p v-if="!favoriteList.length">{{ $t("noSavedCity") }}</p>
     <favorite-block
       class="card"
       v-for="(city, idx) in favoriteList"

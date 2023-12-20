@@ -11,7 +11,7 @@ export default {
   pressure: "Pressure",
   temperature: "Temperature",
   period: "Period",
-
+  noSavedCity: "",
   deleteBlockMessage: "Are you sure you want to delete the block?",
   addMaxFavorite: "to add remove city ... because a maximum of 5",
   confirm: "Confirm",

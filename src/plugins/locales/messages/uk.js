@@ -12,7 +12,7 @@ export default {
   pressure: "Тиск",
   temperature: "Температура",
   period: "Період",
-
+  noSavedCity: "Немає збережених міст",
   deleteBlockMessage: "Видалити блок?",
   addMaxFavorite: "Для додавання видаліть місто ... тому що максимум 5",
   confirm: "Підтвердити",

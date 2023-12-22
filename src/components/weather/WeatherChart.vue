@@ -41,7 +41,7 @@ export default {
           labels: this.labels,
           datasets: [
             {
-              label: `${this.$t("temperature")} (°F)`,
+              label: `${this.$t("temperature")} (°C)`,
               data: this.data,
               borderColor: "rgba(75, 192, 192, 1)",
               borderWidth: 2,
@@ -57,7 +57,7 @@ export default {
             y: {
               title: {
                 display: true,
-                text: `${this.$t("temperature")} (°F)`,
+                text: `${this.$t("temperature")} (°C)`,
               },
               beginAtZero: true,
             },
@@ -73,7 +73,15 @@ export default {
       });
     },
   },
+  computed: {
+    locale() {
+      return this.$store.getters["app/getLocale"];
+    },
+  },
   watch: {
+    locale() {
+      this.renderChart();
+    },
     labels() {
       this.renderChart();
     },

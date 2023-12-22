@@ -78,9 +78,13 @@ export default {
     },
     chartData() {
       if (this.forecastType === "Next 24h") {
-        return this.next24Hours.map((item) => item.main.temp);
+        return this.next24Hours.map((item) =>
+          Math.round(this.kelvinToCelsius(item.main.temp)),
+        );
       } else {
-        return this.dailyInfo.map((item) => item.main.temp);
+        return this.dailyInfo.map((item) =>
+          Math.round(this.kelvinToCelsius(item.main.temp)),
+        );
       }
     },
     chartLabels() {
@@ -99,7 +103,6 @@ export default {
       }));
     },
     dailyInfo() {
-      // Формируем данные по дням
       const dailyMap = {};
       this.weatherForecast.list.forEach((item) => {
         const date = item.dt_txt.split(" ")[0];
@@ -112,14 +115,12 @@ export default {
           };
         }
 
-        // Накапливаем значения для среднего значения по дням
         dailyMap[date].main.humidity.push(item.main.humidity);
         dailyMap[date].main.feels_like.push(item.main.feels_like);
         dailyMap[date].main.temp.push(item.main.temp);
         dailyMap[date].main.pressure.push(item.main.pressure);
       });
 
-      // Вычисляем средние значения по дням
       const dailyInfoValues = Object.values(dailyMap).map((value) => ({
         ...value,
         main: {
@@ -141,6 +142,11 @@ export default {
         },
       }));
       return dailyInfoValues.slice(0, 5);
+    },
+  },
+  methods: {
+    kelvinToCelsius(k) {
+      return k - 273.15;
     },
   },
 };

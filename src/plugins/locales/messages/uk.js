@@ -18,4 +18,5 @@ export default {
   confirm: "Підтвердити",
   cancel: "Скасувати",
   ok: "Ок",
+  notFound: "Сторінка не знайдена",
 };

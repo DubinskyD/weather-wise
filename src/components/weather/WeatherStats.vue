@@ -6,11 +6,15 @@
     </div>
     <div class="stats__wrapper">
       <span class="stats__param">{{ $t("temperature") }}:</span>
-      <span class="stats__label">{{ weatherStats.temp }} &deg;F</span>
+      <span class="stats__label"
+        >{{ Math.round(kelvinToCelsius(weatherStats.temp)) }} &deg;C</span
+      >
     </div>
     <div class="stats__wrapper">
       <span class="stats__param">{{ $t("feelsLike") }}:</span>
-      <span class="stats__label">{{ weatherStats.feels_like }} &deg;F</span>
+      <span class="stats__label"
+        >{{ Math.round(kelvinToCelsius(weatherStats.feels_like)) }} &deg;C</span
+      >
     </div>
 
     <div class="stats__wrapper">
@@ -45,6 +49,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    kelvinToCelsius(k) {
+      return k - 273.15;
+    },
   },
 };
 </script>

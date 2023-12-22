@@ -32,6 +32,25 @@ export default {
       localeList: "app/getLocaleList",
     }),
   },
+  created() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          console.log(position);
+          console.log("Широта:", position.coords.latitude);
+          console.log("Долгота:", position.coords.longitude);
+
+          // Далее можно отправить эти координаты на сервер для определения города
+          // или использовать их для других целей в вашем приложении
+        },
+        function (error) {
+          console.error("Ошибка получения геолокации:", error.message);
+        },
+      );
+    } else {
+      console.log("Геолокация не поддерживается вашим браузером");
+    }
+  },
 };
 </script>
 
